@@ -1,0 +1,430 @@
+
+/* =================================
+   CREATE EVENT PAGE
+================================= */
+
+.create-event-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 35px 30px 60px;
+  min-height: 100vh;
+  color: var(--text-dark);
+  background-color: var(--background);
+  font-family: Arial, sans-serif;
+}
+
+/* Page Header */
+.create-event-header {
+  margin: 25px 0 30px;
+}
+
+.create-event-eyebrow {
+  color: var(--vermillion);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.create-event-header h1 {
+  margin: 8px 0;
+  font-size: 32px;
+  color: var(--text-dark);
+}
+
+.create-event-header p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 15px;
+}
+
+/* Main Form */
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Form Sections */
+.event-form-section,
+.create-itinerary-section {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.form-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.section-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: #FCE5E1;
+  color: var(--vermillion-dark);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.form-section-heading h2 {
+  margin: 0 0 5px;
+  font-size: 21px;
+  color: var(--text-dark);
+}
+
+.form-section-heading p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* Form Fields */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background-color: #FFFCFB;
+  color: var(--text-dark);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--vermillion);
+  box-shadow: 0 0 0 3px rgba(227, 66, 52, 0.1);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 85px;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #A49A97;
+}
+
+.field-hint {
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+/* Category Selection */
+.category-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-option {
+  padding: 9px 16px;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  background-color: var(--white);
+  color: var(--text-light);
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.category-option:hover {
+  border-color: var(--vermillion);
+  color: var(--vermillion);
+}
+
+.category-option.selected {
+  background-color: #FCE5E1;
+  border-color: var(--vermillion);
+  color: var(--vermillion-dark);
+  font-weight: bold;
+}
+
+/* Itinerary Section */
+.create-itinerary-section {
+  margin-top: 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.create-itinerary-section .form-section-heading {
+  margin-bottom: 20px;
+}
+
+/* Empty Itinerary */
+.empty-itinerary {
+  padding: 28px 20px;
+  margin-bottom: 18px;
+  text-align: center;
+  background-color: #FFFCFB;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+}
+
+.empty-itinerary-icon {
+  margin-bottom: 8px;
+  color: var(--vermillion);
+  font-size: 26px;
+}
+
+.empty-itinerary h3 {
+  margin: 0 0 7px;
+  color: var(--text-dark);
+  font-size: 16px;
+}
+
+.empty-itinerary p {
+  max-width: 380px;
+  margin: 0 auto;
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Add Activity Button */
+.add-activity-button {
+  width: 100%;
+  padding: 12px;
+  border: 1px dashed var(--vermillion);
+  border-radius: 9px;
+  background-color: #FFFCFB;
+  color: var(--vermillion);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.add-activity-button:hover {
+  background-color: #FCE5E1;
+}
+
+/* Activity Form */
+.activity-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 18px;
+  padding: 22px;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.activity-form-heading h3 {
+  margin: 0 0 5px;
+  color: var(--text-dark);
+  font-size: 17px;
+}
+
+.activity-form-heading p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+.activity-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.cancel-activity-button {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--text-dark);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-activity-button:hover {
+  background-color: #FCE5E1;
+}
+
+/* Activity Cards */
+.create-itinerary-section .activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.create-itinerary-section .activity-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  padding: 15px;
+  background-color: #FFFCFB;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.activity-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FCE5E1;
+  color: var(--vermillion-dark);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.create-itinerary-section .activity-time {
+  min-width: 85px;
+  font-size: 13px;
+}
+
+.activity-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-info h3 {
+  margin: 0 0 4px;
+  color: var(--text-dark);
+  font-size: 15px;
+}
+
+.activity-info p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Remove Activity */
+.remove-activity-button {
+  padding: 7px 10px;
+  border: none;
+  border-radius: 7px;
+  background-color: #FCE5E1;
+  color: var(--vermillion-dark);
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.remove-activity-button:hover {
+  background-color: #F7D1CA;
+}
+
+/* Create Event Footer */
+.create-event-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 8px;
+}
+
+.create-event-footer p {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.create-event-submit {
+  padding: 14px 25px;
+  border: none;
+  border-radius: 9px;
+  background-color: var(--vermillion);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.create-event-submit:hover {
+  background-color: var(--vermillion-dark);
+}
+
+/* Disabled Buttons */
+.create-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 650px) {
+  .create-event-page {
+    padding: 25px 18px 40px;
+  }
+
+  .create-event-header h1 {
+    font-size: 27px;
+  }
+
+  .event-form-section,
+  .create-itinerary-section {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .create-event-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .create-event-submit {
+    width: 100%;
+  }
+
+  .create-itinerary-section .activity-card {
+    flex-wrap: wrap;
+  }
+
+  .activity-info {
+    flex-basis: calc(100% - 50px);
+  }
+
+  .remove-activity-button {
+    margin-left: auto;
+  }
+}

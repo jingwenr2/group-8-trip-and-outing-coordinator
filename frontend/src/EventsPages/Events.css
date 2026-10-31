@@ -1,0 +1,232 @@
+
+/* GroupGo Theme */
+:root {
+  --vermillion: #E34234;
+  --vermillion-dark: #BD3026;
+  --white: #FFFFFF;
+  --background: #FFF8F6;
+  --text-dark: #302725;
+  --text-light: #77706E;
+  --border: #EADBD7;
+}
+
+/* Events Page */
+.events-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  min-height: 100vh;
+  color: var(--text-dark);
+  background-color: var(--background);
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.events-header h1 {
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.events-header p {
+  color: var(--text-light);
+  margin-top: 0;
+}
+
+/* Buttons */
+.create-button {
+  background-color: var(--vermillion);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.create-button:hover {
+  background-color: var(--vermillion-dark);
+}
+
+/* Event Grid */
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+/* Event Cards */
+.event-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 0;
+  min-height: 180px;
+  padding: 18px;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--vermillion);
+  box-shadow: 0 8px 20px rgba(120, 45, 35, 0.12);
+}
+
+/* Event Category */
+.event-card .event-category {
+  display: inline-block;
+  width: fit-content;
+  background-color: #FCE5E1;
+  color: var(--vermillion-dark);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Event Title */
+.event-card h2 {
+  color: var(--text-dark);
+  font-size: 20px;
+  margin: 0 0 6px 0;
+}
+
+/* Event Description */
+.event-card p {
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Date and Location */
+.event-card .event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 12px;
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+/* Event Details Page */
+.event-details-page {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--text-dark);
+}
+
+/* Back Button */
+.back-button {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: var(--vermillion);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  color: var(--vermillion-dark);
+}
+
+/* Itinerary */
+.itinerary-section {
+  margin-top: 45px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border);
+}
+
+/* Add Activity Button */
+.add-activity-button {
+  background-color: var(--white);
+  color: var(--vermillion);
+  border: 1px solid var(--vermillion);
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-activity-button:hover {
+  background-color: #FCE5E1;
+}
+
+/* Activity Form */
+.activity-form {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* Activity Cards */
+.activity-card {
+  display: flex;
+  gap: 20px;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 12px;
+}
+
+.activity-time {
+  color: var(--vermillion);
+  font-weight: bold;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+  .event-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .events-page {
+    padding: 20px;
+  }
+
+  .events-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .event-list {
+    grid-template-columns: 1fr;
+  }
+
+  .event-details-page {
+    margin: 20px;
+    padding: 24px;
+  }
+}
+
+.event-details-page .event-category {
+  display: inline-block;
+  background-color: #FCE5E1;
+  color: #BD3026;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 8px 0 16px;
+}
