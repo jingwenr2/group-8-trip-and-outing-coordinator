@@ -1,3 +1,4 @@
+
 import { useParams, Link } from "react-router-dom";
 import { events as defaultEvents } from "../data/events";
 import "./Events.css";
@@ -8,6 +9,15 @@ function EventDetails({ events = defaultEvents }) {
   const event = events.find(
     (event) => event.id === Number(id)
   );
+
+  // Format event date
+  function formatDate(date) {
+    return new Date(`${date}T00:00:00`).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  }
 
   if (!event) {
     return (
@@ -25,13 +35,15 @@ function EventDetails({ events = defaultEvents }) {
       </Link>
 
       <h1>{event.name}</h1>
-       <span className="event-category">
+
+      <span className="event-category">
         {event.category}
       </span>
+
       <p>{event.description}</p>
 
       <div className="event-details">
-        <p>📅 {event.date}</p>
+        <p>📅 {formatDate(event.date)}</p>
         <p>📍 {event.location}</p>
       </div>
 

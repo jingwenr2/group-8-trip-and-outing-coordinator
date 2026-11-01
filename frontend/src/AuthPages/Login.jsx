@@ -1,17 +1,21 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Auth.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
   function handleLogin(e) {
     e.preventDefault();
 
     console.log("Email:", email);
     console.log("Login submitted");
+
+    navigate("/events");
   }
 
   return (
