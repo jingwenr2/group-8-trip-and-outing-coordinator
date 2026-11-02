@@ -3,6 +3,11 @@
    CREATE EVENT PAGE
 ================================= */
 
+/* Prevent elements from overflowing their containers */
+* {
+  box-sizing: border-box;
+}
+
 .create-event-page {
   max-width: 900px;
   margin: 0 auto;
@@ -92,16 +97,19 @@
   gap: 20px;
 }
 
+/* Date and Location on Separate Lines */
 .form-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
 }
 
 .form-field {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-width: 0;
 }
 
 .form-field label {
@@ -113,7 +121,10 @@
 .form-field input,
 .form-field select,
 .form-field textarea {
+  display: block;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 12px 14px;
   border: 1px solid var(--border);
   border-radius: 9px;
@@ -401,10 +412,6 @@
   .event-form-section,
   .create-itinerary-section {
     padding: 20px;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
   }
 
   .create-event-footer {

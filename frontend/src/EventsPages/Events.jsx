@@ -1,3 +1,4 @@
+
 import { useNavigate, Link } from "react-router-dom";
 import { events as defaultEvents } from "../data/events";
 import "./Events.css";
@@ -5,8 +6,26 @@ import "./Events.css";
 function Events({ events = defaultEvents }) {
   const navigate = useNavigate();
 
+  // Format event date
+  function formatDate(date) {
+    if (!date) return "";
+
+    const parsedDate = /^\d{4}-\d{2}-\d{2}$/.test(date)
+      ? new Date(`${date}T00:00:00`)
+      : new Date(date);
+
+    if (Number.isNaN(parsedDate.getTime())) return date;
+
+    return parsedDate.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  }
+
   return (
     <main className="events-page">
+      {/* Page Header */}
       <header className="events-header">
         <div>
           <h1>My Events</h1>
@@ -21,6 +40,7 @@ function Events({ events = defaultEvents }) {
         </button>
       </header>
 
+      {/* Event Cards */}
       <section className="event-list">
         {events.map((event) => (
           <Link
@@ -36,8 +56,9 @@ function Events({ events = defaultEvents }) {
 
             <p>{event.description}</p>
 
+            {/* Event Date and Location */}
             <div className="event-details">
-              <span>📅 {event.date}</span>
+              <span>📅 {formatDate(event.date)}</span>
               <span>📍 {event.location}</span>
             </div>
           </Link>
