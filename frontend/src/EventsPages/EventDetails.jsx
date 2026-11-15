@@ -12,10 +12,32 @@ function EventDetails({ events = defaultEvents }) {
 
   // Format event date
   function formatDate(date) {
-    return new Date(`${date}T00:00:00`).toLocaleDateString("en-US", {
+    if (!date) return "";
+
+    const parsedDate = /^\d{4}-\d{2}-\d{2}$/.test(date)
+      ? new Date(`${date}T00:00:00`)
+      : new Date(date);
+
+    if (Number.isNaN(parsedDate.getTime())) {
+      return date;
+    }
+
+    return parsedDate.toLocaleDateString("en-US", {
       month: "short",
       day: "numeric",
       year: "numeric",
+    });
+  }
+
+  // Format activity time
+  function formatTime(time) {
+    if (!time) return "";
+
+    return new Date(
+      `2000-01-01T${time}`
+    ).toLocaleTimeString([], {
+      hour: "numeric",
+      minute: "2-digit",
     });
   }
 
@@ -30,10 +52,12 @@ function EventDetails({ events = defaultEvents }) {
 
   return (
     <main className="event-details-page">
+      {/* Back Button */}
       <Link to="/events" className="back-button">
         ← Back to Events
       </Link>
 
+      {/* Event Information */}
       <h1>{event.name}</h1>
 
       <span className="event-category">
@@ -47,6 +71,7 @@ function EventDetails({ events = defaultEvents }) {
         <p>📍 {event.location}</p>
       </div>
 
+      {/* Event Itinerary */}
       <section className="itinerary-section">
         <h2>Event Itinerary</h2>
 
@@ -62,12 +87,7 @@ function EventDetails({ events = defaultEvents }) {
                 key={activity.id}
               >
                 <span className="activity-time">
-                  {new Date(
-                    `2000-01-01T${activity.time}`
-                  ).toLocaleTimeString([], {
-                    hour: "numeric",
-                    minute: "2-digit",
-                  })}
+                  {formatTime(activity.time)}
                 </span>
 
                 <div>
