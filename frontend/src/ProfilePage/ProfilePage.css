@@ -1,0 +1,412 @@
+
+.profile-page {
+  min-height: 100vh;
+  background: #FFF8F6;
+  padding: 40px 7%;
+  color: #302725;
+}
+
+.profile-header {
+  margin-bottom: 30px;
+}
+
+.profile-eyebrow {
+  color: #BD3026;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.profile-header h1 {
+  font-size: 34px;
+  margin: 8px 0;
+}
+
+.profile-header p,
+.upcoming-events-header p {
+  color: #77706E;
+  margin: 0;
+}
+
+/* LICENSE CARD */
+
+.license-card {
+  max-width: 750px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: 1px solid #EADBD7;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(48, 39, 37, 0.08);
+}
+
+.license-header {
+  background: #E34234;
+  color: #FFFFFF;
+  padding: 22px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.license-header h2 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: 2px;
+}
+
+.license-header p {
+  margin: 5px 0 0;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.license-symbol {
+  font-size: 32px;
+}
+
+.license-body {
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.profile-photo {
+  width: 125px;
+  height: 145px;
+  flex-shrink: 0;
+  background: #FCE5E1;
+  border: 2px solid #EADBD7;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 55px;
+  overflow: hidden;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  flex: 1;
+}
+
+.profile-info-field span,
+.license-preferences > span {
+  color: #77706E;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.profile-info-field h2 {
+  font-size: 23px;
+  margin: 5px 0 0;
+}
+
+.profile-info-field h3 {
+  font-size: 16px;
+  margin: 5px 0 0;
+}
+
+.license-preferences {
+  padding: 0 28px 25px;
+}
+
+.preference-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.preference-tag {
+  background: #FCE5E1;
+  color: #BD3026;
+  padding: 7px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.license-footer {
+  background: #FFF8F6;
+  border-top: 1px solid #EADBD7;
+  padding: 15px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.license-footer span {
+  color: #77706E;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.license-footer strong {
+  color: #BD3026;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* PROFILE BUTTON */
+
+.profile-actions {
+  max-width: 750px;
+  margin: 18px auto 45px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-profile-button,
+.save-profile-button,
+.create-button {
+  background: #E34234;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.edit-profile-button:hover,
+.save-profile-button:hover,
+.create-button:hover {
+  background: #BD3026;
+}
+
+/* EDIT PROFILE */
+
+.edit-profile-section {
+  max-width: 750px;
+  margin: 0 auto 45px;
+  padding: 28px;
+  background: #FFFFFF;
+  border: 1px solid #EADBD7;
+  border-radius: 14px;
+}
+
+.edit-profile-section h2 {
+  margin-top: 0;
+}
+
+.profile-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.profile-form-field label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.profile-form-field input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #EADBD7;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.edit-preferences {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.preference-option {
+  padding: 9px 15px;
+  border: 1px solid #EADBD7;
+  border-radius: 20px;
+  background: #FFFFFF;
+  color: #302725;
+  cursor: pointer;
+}
+
+.preference-option.selected {
+  background: #FCE5E1;
+  border-color: #E34234;
+  color: #BD3026;
+}
+
+.save-profile-button {
+  margin-top: 10px;
+}
+
+/* UPCOMING EVENTS */
+
+.upcoming-events-section {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.upcoming-events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.upcoming-events-header h2 {
+  font-size: 27px;
+  margin: 7px 0;
+}
+
+.view-all-events {
+  color: #BD3026;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.view-all-events:hover {
+  text-decoration: underline;
+}
+
+.upcoming-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.upcoming-event-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 22px;
+  background: #FFFFFF;
+  border: 1px solid #EADBD7;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.upcoming-event-card:hover {
+  border-color: #E34234;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(48, 39, 37, 0.06);
+}
+
+.upcoming-event-date {
+  width: 60px;
+  height: 65px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: #FCE5E1;
+  color: #BD3026;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upcoming-event-date span {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.upcoming-event-date strong {
+  font-size: 24px;
+}
+
+.upcoming-event-info {
+  flex: 1;
+}
+
+.upcoming-event-category {
+  color: #BD3026;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.upcoming-event-info h3 {
+  font-size: 17px;
+  margin: 5px 0;
+}
+
+.upcoming-event-info p {
+  color: #77706E;
+  font-size: 13px;
+  margin: 0;
+}
+
+.upcoming-event-arrow {
+  color: #BD3026;
+  font-size: 23px;
+}
+
+.no-upcoming-events {
+  background: #FFFFFF;
+  border: 1px dashed #EADBD7;
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.no-upcoming-events > span {
+  color: #E34234;
+  font-size: 32px;
+}
+
+.no-upcoming-events h3 {
+  margin-bottom: 8px;
+}
+
+.no-upcoming-events p {
+  color: #77706E;
+  margin-bottom: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 650px) {
+  .profile-page {
+    padding: 25px 5%;
+  }
+
+  .license-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-information {
+    width: 100%;
+  }
+
+  .profile-header h1 {
+    font-size: 28px;
+  }
+
+  .upcoming-events-header {
+    align-items: flex-start;
+  }
+
+  .upcoming-event-card {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .license-footer {
+    gap: 10px;
+  }
+}
