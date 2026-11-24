@@ -18,14 +18,14 @@ function Signup({ onSignup }) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    name: "",
-    age: "",
+    firstName: "",
+    lastName: "",
+    birthday: "",
     email: "",
     password: "",
     confirmPassword: "",
     preferences: [],
   });
-// Instead of age, use Birthdate, but only month and day
 
   const [error, setError] = useState("");
 
@@ -62,10 +62,14 @@ function Signup({ onSignup }) {
     }
 
     // Create the user's profile
+    const firstName = formData.firstName.trim();
+    const lastName = formData.lastName.trim();
     const newProfile = {
       id: Date.now(),
-      name: formData.name.trim(),
-      age: Number(formData.age),
+      firstName,
+      lastName,
+      name: `${firstName} ${lastName}`,
+      birthday: formData.birthday,
       email: formData.email.trim(),
       preferences: formData.preferences,
       photo: "",
@@ -93,27 +97,34 @@ function Signup({ onSignup }) {
         <h2>Create Your Account</h2>
 
         <form onSubmit={handleSubmit}>
-
-          <label htmlFor="name">Full Name</label>
+          <label htmlFor="firstName">First Name</label>
           <input
-            id="name"
-            name="name"
+            id="firstName"
+            name="firstName"
             type="text"
-            placeholder="Enter your full name"
-            value={formData.name}
+            placeholder="Enter your first name"
+            value={formData.firstName}
             onChange={handleChange}
             required
           />
 
-          <label htmlFor="age">Age</label>
+          <label htmlFor="lastName">Last Name</label>
           <input
-            id="age"
-            name="age"
-            type="number"
-            min="1"
-            max="120"
-            placeholder="Enter your age"
-            value={formData.age}
+            id="lastName"
+            name="lastName"
+            type="text"
+            placeholder="Enter your last name"
+            value={formData.lastName}
+            onChange={handleChange}
+            required
+          />
+
+          <label htmlFor="birthday">Birthday</label>
+          <input
+            id="birthday"
+            name="birthday"
+            type="date"
+            value={formData.birthday}
             onChange={handleChange}
             required
           />
