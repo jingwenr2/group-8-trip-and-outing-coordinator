@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { events as defaultEvents } from "../data/events";
+import NavigationBar from "../NavigationTab/NavigationTab";
 import "./ProfilePage.css";
 
 function Profile({ events = defaultEvents }) {
@@ -100,7 +101,9 @@ function Profile({ events = defaultEvents }) {
     .slice(0, 5);
 
   return (
-    <main className="profile-page">
+    <>
+      <NavigationBar />
+      <main className="profile-page">
 
       {/* Page Header */}
       <header className="profile-header">
@@ -344,7 +347,8 @@ function Profile({ events = defaultEvents }) {
 
       </section>
 
-    </main>
+      </main>
+    </>
   );
 }
 

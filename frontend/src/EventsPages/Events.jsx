@@ -1,6 +1,7 @@
 
 import { useNavigate, Link } from "react-router-dom";
 import { events as defaultEvents } from "../data/events";
+import NavigationBar from "../NavigationTab/NavigationTab";
 import "./Events.css";
 
 function Events({ events = defaultEvents }) {
@@ -24,47 +25,48 @@ function Events({ events = defaultEvents }) {
   }
 
   return (
-    <main className="events-page">
-      {/* Page Header */}
-      <header className="events-header">
-        <div>
-          <h1>My Events</h1>
-          <p>Plan something fun with your friends.</p>
-        </div>
+    <>
+      <NavigationBar />
+      <main className="events-page">
+        {/* Page Header */}
+        <header className="events-header">
+          <div>
+            <h1>My Events</h1>
+            <p>Plan something fun with your friends.</p>
+          </div>
 
-        <button
-          className="create-button"
-          onClick={() => navigate("/events/new")}
-        >
-          + Add New Event
-        </button>
-      </header>
-
-      {/* Event Cards */}
-      <section className="event-list">
-        {events.map((event) => (
-          <Link
-            to={`/events/${event.id}`}
-            className="event-card"
-            key={event.id}
+          <button
+            className="create-button"
+            onClick={() => navigate("/events/new")}
           >
-            <span className="event-category">
-              {event.category}
-            </span>
+            + Add New Event
+          </button>
+        </header>
 
-            <h2>{event.name}</h2>
+        {/* Event Cards */}
+        <section className="event-list">
+          {events.map((event) => (
+            <Link
+              to={`/events/${event.id}`}
+              className="event-card"
+              key={event.id}
+            >
+              <span className="event-category">{event.category}</span>
 
-            <p>{event.description}</p>
+              <h2>{event.name}</h2>
 
-            {/* Event Date and Location */}
-            <div className="event-details">
-              <span>📅 {formatDate(event.date)}</span>
-              <span>📍 {event.location}</span>
-            </div>
-          </Link>
-        ))}
-      </section>
-    </main>
+              <p>{event.description}</p>
+
+              {/* Event Date and Location */}
+              <div className="event-details">
+                <span>📅 {formatDate(event.date)}</span>
+                <span>📍 {event.location}</span>
+              </div>
+            </Link>
+          ))}
+        </section>
+      </main>
+    </>
   );
 }
 
